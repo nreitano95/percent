@@ -5,10 +5,10 @@ import MySQLdb
 # load_dotenv(find_dotenv())
 
 # Set the variables in our application with those environment variables
-host = "aws-percent-main.cswicfifygp4.us-west-1.rds.amazonaws.com"
-user = "admin"
-passwd = "rAerc!U579cHDq!c$y1qwz"
-db = "innodb"
+host = "un0jueuv2mam78uv.cbetxkdyhwsb.us-east-1.rds.amazonaws.com"
+user = "wpyfm36p5hpby2zj"
+passwd = "nnc2y3yei1o4sdjw"
+db = "a6vkw832q9hq7ez3"
 
 def connect_to_database(host = host, user = user, passwd = passwd, db = db):
     '''
