@@ -7,11 +7,11 @@ import MySQLdb
 # Configuration
 application = Flask(__name__)
 
-db_connection = db.connect_to_database()
+# db_connection = db.connect_to_database()
 
 @application.route('/', methods=('GET', 'POST'))
 def root():
-    
+
     return render_template("index.j2")
 
 # @application.route('/database-test-create', methods=('GET', 'POST'))
