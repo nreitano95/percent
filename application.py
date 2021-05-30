@@ -1,13 +1,13 @@
 from flask import Flask, render_template, json, request, redirect
 
-# import database.db_connector as db
+import database.db_connector as db
 
 import MySQLdb
 
 # Configuration
 application = Flask(__name__)
 
-# db_connection = db.connect_to_database()
+db_connection = db.connect_to_database()
 
 @application.route('/', methods=('GET', 'POST'))
 def root():
