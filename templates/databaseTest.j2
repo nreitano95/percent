@@ -1,0 +1,32 @@
+{% extends "index.j2" %}
+
+<title>{% block title %}Database Create Test{% endblock %}</title>
+
+<header>
+  {% block header %}<h1>Database Create Test</h1>{% endblock %}
+</header>
+
+{% block body %}
+  
+<table>
+<thead>
+  <tr>
+    <th>User ID</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+  </tr>
+</thead>
+
+<tbody>
+
+{% for user in Users %}
+  <tr>
+    <td>{{ user['id'] }}</td>
+    <td>{{ user['first_name'] }}</td>
+    <td>{{ user['last_name'] }}</td>
+  </tr>
+{% endfor %}
+<tbody>
+</table>
+
+{% endblock %}
