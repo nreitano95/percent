@@ -1,11 +1,25 @@
 from flask import Flask, render_template, json, request, redirect
 
+from flask_talisman import Talisman
+
 import database.db_connector as db
 
 import MySQLdb
 
 # Configuration
 application = Flask(__name__)
+
+
+csp = {
+    'default-src': [
+        '\'self\'',
+        '\'unsafe-inline\'',
+        'maxcdn.bootstrapcdn.com',
+        'use.fontawesome.com'
+    ]
+}
+
+Talisman(application, content_security_policy=csp)
 
 db_connection = db.connect_to_database()
 
