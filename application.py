@@ -8,8 +8,9 @@ import MySQLdb
 
 # Configuration
 application = Flask(__name__)
+db_connection = db.connect_to_database()
 
-
+# SSL Certificate Verification
 csp = {
     'default-src': [
         '\'self\'',
@@ -21,7 +22,6 @@ csp = {
 
 Talisman(application, content_security_policy=csp)
 
-db_connection = db.connect_to_database()
 
 @application.route('/', methods=('GET', 'POST'))
 def root():
