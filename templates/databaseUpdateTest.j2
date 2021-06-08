@@ -1,0 +1,29 @@
+{% extends "index.j2" %}
+
+<title>{% block title %}Database Update Test{% endblock %}</title>
+
+  <header>
+    {% block header %}<h1>Database Update Test</h1>{% endblock %}
+  </header>
+
+  {% block body %}
+  
+  <form method='POST'>
+    <div class="row">
+      <div class="six columns">
+        <label for="firstNameInput">First Name</label>
+        <input class="u-full-width" type="text" id="first_name" name="first_name" value="{{ request.form['first_name'] or user['first_name'] }}" required>
+      </div>
+      
+      <div class="six columns">
+        <label for="lastNameInput">Last Name</label>
+        <input class="u-full-width" type="text" id="last_name" name="last_name" value="{{ request.form['last_name'] or user['last_name'] }}" required>
+      </div>
+    </div>
+
+  <input class="button-primary" type="submit" value="Submit">
+  <a class="button" href="{{ url_for('root') }}">Cancel</a>
+
+</form>
+
+  {% endblock %}

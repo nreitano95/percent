@@ -14,6 +14,8 @@
     <th>User ID</th>
     <th>First Name</th>
     <th>Last Name</th>
+    <th>Update</th>
+    <th>Delete</th>
   </tr>
 </thead>
 
@@ -24,6 +26,8 @@
     <td>{{ user['id'] }}</td>
     <td>{{ user['first_name'] }}</td>
     <td>{{ user['last_name'] }}</td>
+    <td><a class="action" href="{{ url_for('dbUpdateTest', id=user['id']) }}">Edit</a></td>
+    <td><a class="action" href="{{ url_for('dbDeleteTest', id=user['id']) }}">Delete</a></td>
   </tr>
 {% endfor %}
 <tbody>
